@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+	<ui:composition template="/index.xhtml">
+		<ui:define name="container">
+			<h:form id="frmCarros">
+				<h1>Carros</h1>
+				<fieldset>
+					<legend>Cadastro de Carros</legend>
+					<h:panelGrid columns="2">
+						<h:outputLabel value="Marca" for="campo-marca" />
+						<h:inputText id="campo-marca" value="#{carroBean.carro.marca}" size="60" maxlength="60" />
+						
+						<h:outputLabel value="Modelo" for="campo-modelo" />
+						<h:inputText id="campo-modelo" value="#{carroBean.carro.modelo}" size="40" maxlength="40" />
+					</h:panelGrid>
+					<h:commandButton action="#{carroBean.adicionaCarro}" value="Adicionar" />
+				</fieldset>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</html>

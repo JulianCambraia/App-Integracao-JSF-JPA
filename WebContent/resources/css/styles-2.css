@@ -1,0 +1,79 @@
+@CHARSET "UTF-8";
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #e5e5e5;
+	color: #000;
+	font-family: "Trebuchet MS", Tahoma, Arial, Verdana;
+	font-size: 12px;
+	height: 100%;
+}
+
+#main-page {
+	margin: 1em auto;
+	width: 80%;
+	background: #fff;
+	height: 100%;
+}
+
+#header {
+	color: #cc6600;
+	background-color: #4d4d4d;
+	border-style: solid;
+	border-width: thin;
+	margin: 0px 2px 2px 2px;
+	height: 90px;
+}
+
+#messages {
+	color: #ff0000;
+	background-color: #cece9e;
+	border-style: solid;
+	border-width: thin;
+	min-height:3em;
+	margin: 2px 2px 2px 2px;
+	height: 100%;
+}
+
+#navmenu {
+	float: right;
+	display: inline;
+	color: #cc6600;
+	background-color: #b9d6df;
+	border-style: solid;
+	border-width: thin;
+	margin: 0px 2px 2px 1px;
+	width: 21.3%;
+	height: 590px;
+}
+
+#container {
+	float: left;
+	display: inline;
+	width: 78%;
+	height: 590px;
+	color: #cc6600;
+	background-color: #b9d6df;
+	border-style: solid;
+	border-width: thin;
+	margin: 0 2px 2px 1px;
+}
+
+#footer {
+	clear: both;
+	color: #cc6600;
+	background-color: #cece9e;
+	border-style: solid;
+	border-width: thin;
+	margin: 0px 2px 2px 1px;
+	height: 100%;
+}
+
+.logo {
+	height: 85px;
+	padding: 2px;
+	border: 1px solid #9FA41D;
+	margin: 0 0 1px 1px;
+	float: left;
+	}

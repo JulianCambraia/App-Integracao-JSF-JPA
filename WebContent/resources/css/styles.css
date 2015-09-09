@@ -1,0 +1,73 @@
+@CHARSET "UTF-8";
+
+body, html {
+	background-color: #e5e5e5;
+	color: #000;
+	font-family: "Trebuchet MS", Tahoma, Arial, Verdana;
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+}
+
+#main-page {
+	max-width: 1600px;
+	margin: 0 auto;
+	overflow: hidden;
+	background: lightgray;
+}
+
+#header {
+	color: #cc6600;
+	background-color: #4d4d4d;
+	border-style: solid;
+	height: 120px;
+	margin: 0px 2px 2px 2px;
+	text-align: center;
+}
+
+#messages {
+	color: #cc6600;
+	background-color: #cece9e;
+	border-style: solid;
+	height: 100px;
+	margin: -12px 2px 2px 2px;
+	text-align: center;
+}
+
+#container {
+	color: #cc6600;
+	background-color: #b9d6df;
+	border-style: solid;
+	width: 80%;
+	float: left;
+	height: 590px;
+	margin: 0px 1px 1px 2px;
+	text-align: center;
+}
+
+#navmenu {
+	color: #cc6600;
+	background-color: #e0c4c4;
+	border-style: solid;
+	width: 300px;
+	float: right; 
+	height : 590px;
+	margin: 0px 2px 2px 1px;
+	text-align: center;
+	height: 590px;
+}
+
+#footer {
+	color: #cc6600;
+	background-color: #cece9e;
+	border-style: solid;
+	height: 50px;
+	margin: 600px 2px 2px 2px;
+	text-align: center;
+}
+.logo {
+	position:absolute;
+	height: 100px;
+	margin: 6px 0px 0px -600px;
+	float: left;
+}
