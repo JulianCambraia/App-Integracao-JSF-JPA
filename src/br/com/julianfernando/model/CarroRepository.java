@@ -30,7 +30,4 @@ public class CarroRepository {
 	public void setEntityManager(EntityManager entityManager) {
 		this.entityManager = entityManager;
 	}
-	
-	
-
 }

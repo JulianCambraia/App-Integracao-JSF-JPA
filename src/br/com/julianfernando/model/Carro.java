@@ -15,10 +15,16 @@ public class Carro implements Serializable {
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
+
 	private String modelo;
 	
 	private String marca;
 
+	public Carro() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
 	public Long getId() {
 		return id;
 	}

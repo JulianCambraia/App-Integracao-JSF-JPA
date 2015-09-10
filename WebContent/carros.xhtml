@@ -1,25 +1,54 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
 
-	<ui:composition template="/index.xhtml">
-		<ui:define name="container">
-			<h:form id="frmCarros">
-				<h1>Carros</h1>
-				<fieldset>
-					<legend>Cadastro de Carros</legend>
-					<h:panelGrid columns="2">
-						<h:outputLabel value="Marca" for="campo-marca" />
-						<h:inputText id="campo-marca" value="#{carroBean.carro.marca}" size="60" maxlength="60" />
-						
-						<h:outputLabel value="Modelo" for="campo-modelo" />
-						<h:inputText id="campo-modelo" value="#{carroBean.carro.modelo}" size="40" maxlength="40" />
-					</h:panelGrid>
-					<h:commandButton action="#{carroBean.adicionaCarro}" value="Adicionar" />
+<ui:composition template="/index.xhtml">
+	<ui:define name="container">
+		<h:form id="frmCarros">
+			<h1>Carros</h1>
+			<fieldset>
+				<legend>Cadastro de Carros</legend>
+				<h:panelGrid columns="2">
+					<h:outputLabel value="Marca" for="campo-marca" />
+					<h:inputText id="campo-marca" value="#{carroBean.carro.marca}"
+						size="60" maxlength="60" required="true"
+						requiredMessage="Campo Marca é de preenchimento obrigatório." />
+
+					<h:outputLabel value="Modelo" for="campo-modelo" />
+					<h:inputText id="campo-modelo" value="#{carroBean.carro.modelo}"
+						size="40" maxlength="40" required="true"
+						requiredMessage="Campo Modelo é de preenchimento obrigatório" />
+				</h:panelGrid>
+			</fieldset>
+
+				
+			<h:panelGroup rendered="#{not empty carroBean.carros}">
+				<fieldset id="tabela">
+					<legend>Lista de Carros</legend>
+					<h:dataTable border="1" value="#{carroBean.carros}" var="carro"
+						rendered="#{not empty carroBean.carros}" styleClass="tableField"
+						rowClasses="tableOddRow,tableEvenRow" headerClass="tableHeader" >
+
+						<f:facet name="header">Modelos e Marcas</f:facet>
+						<h:column>
+							<f:facet name="header">Código</f:facet>
+								#{carro.id}
+							</h:column>
+						<h:column>
+							<f:facet name="header">Marca</f:facet>
+								#{carro.marca}
+							</h:column>
+						<h:column>
+							<f:facet name="header">Modelo</f:facet>
+								#{carro.modelo}
+						</h:column>
+					</h:dataTable>
 				</fieldset>
-			</h:form>
-		</ui:define>
-	</ui:composition>
+			</h:panelGroup>
+			<h:commandButton action="#{carroBean.adicionaCarro}" value="Adicionar" type="submit"/>
+		</h:form>
+	</ui:define>
+</ui:composition>
 </html>

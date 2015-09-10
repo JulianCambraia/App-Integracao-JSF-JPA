@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.el.ELContext;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.persistence.EntityManager;
 
@@ -11,23 +12,29 @@ import br.com.julianfernando.model.Carro;
 import br.com.julianfernando.model.CarroRepository;
 
 @ManagedBean
+@SessionScoped
 public class CarroBean {
 	
 	private Carro carro = new Carro();
+	private List<Carro> carros;
 	
 	public void adicionaCarro() {
-		EntityManager entityManager = this.getEntityManager();
-		CarroRepository carroRepository = new CarroRepository(entityManager);
-		
-		carroRepository.adiciona(this.carro);
-		this.carro = new Carro();
+			EntityManager entityManager = this.getEntityManager();
+			CarroRepository carroRepository = new CarroRepository(entityManager);
+			
+			carroRepository.adiciona(this.carro);
+			this.carro = new Carro();
+			this.carros = null;
 	}
 
 	public List<Carro> getCarros() {
-		EntityManager entityManager = this.getEntityManager();
-		CarroRepository repository = new CarroRepository(entityManager);
+		if (this.carros == null) {
+			EntityManager entityManager = this.getEntityManager();
+			CarroRepository repository = new CarroRepository(entityManager);
+			this.carros = repository.buscaTodos();
+		}
 		
-		return repository.buscaTodos();
+		return this.carros;
 	}
 	
 	private EntityManager getEntityManager() {
@@ -48,4 +55,7 @@ public class CarroBean {
 		this.carro = carro;
 	}
 
+	public void setCarros(List<Carro> carros) {
+		this.carros = carros;
+	}
 }
